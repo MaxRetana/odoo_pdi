@@ -1,8 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 Preguntas y ayuda
-    url: https://github.com/MaxRetana/odoo_pdi/discussions
-    about: Para dudas de uso, usa Discussions en lugar de abrir un issue.
   - name: 🔒 Vulnerabilidades de seguridad
     url: https://github.com/MaxRetana/odoo_pdi/security/advisories/new
     about: Reporta vulnerabilidades de forma privada, nunca en un issue público.
