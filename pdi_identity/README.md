@@ -16,7 +16,7 @@ En desarrollo. Cada parte se entrega en su propio issue:
 | Parte | Estado |
 |-------|--------|
 | Estructura del módulo | Listo |
-| Preprocesamiento de imagen y OCR | Pendiente |
+| Preprocesamiento de imagen y OCR | Listo |
 | Parser de INE | Pendiente |
 | Asistente de escaneo | Pendiente |
 | Integración con `res.partner` | Pendiente |
