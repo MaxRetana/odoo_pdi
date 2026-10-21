@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pdi_identity_scan_view_form" model="ir.ui.view">
+        <field name="name">pdi.identity.scan.form</field>
+        <field name="model">pdi.identity.scan</field>
+        <field name="arch" type="xml">
+            <form string="Escanear identificación">
+                <field name="step" invisible="1"/>
+                <field name="target_model" invisible="1"/>
+                <field name="target_res_id" invisible="1"/>
+
+                <div invisible="step != 'draft'">
+                    <p class="text-muted">
+                        Sube una foto clara de la identificación, completa, bien iluminada y sin reflejos.
+                        Las imágenes se leen en el servidor y no se envían a servicios externos.
+                    </p>
+                    <group>
+                        <field name="document_type"/>
+                    </group>
+                    <group>
+                        <group string="Frente">
+                            <field name="front_image" widget="image" nolabel="1" options="{'size': [0, 220]}"/>
+                        </group>
+                        <group string="Reverso (opcional)">
+                            <field name="back_image" widget="image" nolabel="1" options="{'size': [0, 220]}"/>
+                        </group>
+                    </group>
+                </div>
+
+                <div invisible="step != 'review'">
+                    <div class="alert alert-warning" role="alert" invisible="not warnings">
+                        <field name="warnings" nolabel="1"/>
+                    </div>
+                    <p class="text-muted">
+                        Revisa los datos leídos y corrige lo que haga falta antes de guardar.
+                    </p>
+                    <group>
+                        <group string="Persona">
+                            <field name="first_name"/>
+                            <field name="paternal_surname"/>
+                            <field name="maternal_surname"/>
+                            <field name="birth_date"/>
+                            <field name="gender"/>
+                            <field name="birth_state_id"/>
+                        </group>
+                        <group string="Identificación">
+                            <field name="curp"/>
+                            <field name="elector_key"/>
+                            <field name="validity_year" options="{'format': false}"/>
+                        </group>
+                    </group>
+                    <group string="Domicilio">
+                        <group>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="zip"/>
+                        </group>
+                        <group>
+                            <field name="city"/>
+                            <field name="state_id" options="{'no_create': true}"/>
+                            <field name="country_id" options="{'no_create': true}"/>
+                        </group>
+                    </group>
+                </div>
+
+                <footer>
+                    <button name="action_scan" type="object" string="Leer imagen" class="btn-primary"
+                            invisible="step != 'draft'" data-hotkey="q"/>
+                    <button name="action_apply" type="object" string="Crear registro" class="btn-primary"
+                            invisible="step != 'review' or target_res_id" data-hotkey="q"/>
+                    <button name="action_apply" type="object" string="Completar registro" class="btn-primary"
+                            invisible="step != 'review' or not target_res_id" data-hotkey="q"/>
+                    <button name="action_back" type="object" string="Volver a cargar" class="btn-secondary"
+                            invisible="step != 'review'"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="pdi_identity_scan_action" model="ir.actions.act_window">
+        <field name="name">Escanear identificación</field>
+        <field name="res_model">pdi.identity.scan</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

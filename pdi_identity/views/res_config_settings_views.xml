@@ -17,6 +17,11 @@
                             <field name="pdi_ocr_lang" placeholder="spa"/>
                         </setting>
                     </block>
+                    <block title="Privacidad" name="pdi_identity_privacy_container">
+                        <setting id="pdi_keep_images_setting" string="Conservar las imágenes" help="Adjunta la INE al contacto o empleado creado. Por defecto no se guarda: contiene datos personales sensibles.">
+                            <field name="pdi_keep_images"/>
+                        </setting>
+                    </block>
                 </app>
             </xpath>
         </field>

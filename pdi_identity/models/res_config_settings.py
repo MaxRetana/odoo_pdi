@@ -16,3 +16,9 @@ class ResConfigSettings(models.TransientModel):
         default="spa",
         help="Código de idioma de Tesseract. Ejemplos: spa, spa+eng.",
     )
+    pdi_keep_images = fields.Boolean(
+        string="Conservar las imágenes",
+        config_parameter="pdi_identity.keep_images",
+        help="Adjunta las imágenes de la identificación al registro creado. "
+             "Por defecto no se conservan: contienen datos personales sensibles.",
+    )
