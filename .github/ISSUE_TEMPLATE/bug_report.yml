@@ -1,0 +1,76 @@
+name: 🐞 Reporte de bug
+description: Algo no funciona como debería
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportarlo. Cuanto más concreto sea el reporte, más rápido se resuelve.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Antes de enviar
+      options:
+        - label: Busqué en los issues existentes y no encontré uno igual
+          required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: ¿Qué está pasando?
+      description: Describe el problema en pocas líneas.
+      placeholder: "Al hacer clic en Guardar, la pantalla se congela."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducirlo
+      description: Lo más mínimo posible, en orden.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Resultado actual
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión
+      description: Versión o commit donde ocurre.
+      placeholder: "1.4.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impacto
+      options:
+        - Bloqueante (no puedo continuar)
+        - Alto (funcionalidad importante rota)
+        - Medio (hay workaround)
+        - Bajo (cosmético)
+      default: 2
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes
+      description: Se formatea automáticamente como código, no necesitas backticks.
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Capturas o archivos
+      description: Arrastra aquí capturas de pantalla o archivos.
