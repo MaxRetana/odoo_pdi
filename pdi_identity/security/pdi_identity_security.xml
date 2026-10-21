@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="res.groups.privilege" id="res_groups_privilege_pdi_identity">
+        <field name="name">Escaneo de identificaciones</field>
+        <field name="sequence">50</field>
+        <field name="category_id" ref="base.module_category_productivity"/>
+    </record>
+
+    <record id="group_pdi_identity_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_pdi_identity"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Puede escanear identificaciones para crear o completar contactos y empleados.</field>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_pdi_identity_user'))]"/>
+    </record>
+
+</odoo>
