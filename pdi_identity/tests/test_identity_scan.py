@@ -7,6 +7,7 @@ from unittest.mock import patch
 from PIL import Image
 
 from odoo.exceptions import UserError
+from odoo.tests import Form
 from odoo.tests.common import TransactionCase, tagged
 
 from .test_ine_parser import BACK_A, FRONT_A
@@ -93,8 +94,9 @@ class TestIdentityScan(TransactionCase):
         self.assertEqual(data["full_name"], "Juan Garcia Lopez")
         self.assertEqual(data["curp"], "GALJ800101HJCRPN05")
 
-    # -- aplicar: ``res.partner`` aún no hereda el mixin en este punto, por
-    # -- eso se simula el método que cada modelo destino implementa.
+    # -- aplicar: se simula el mapeo que implementa cada modelo destino para
+    # -- probar el asistente de forma aislada (el mapeo real de ``res.partner``
+    # -- se prueba en ``test_res_partner``).
 
     def _patch_prepare(self, captured):
         def prepare(record, data):
@@ -163,3 +165,18 @@ class TestIdentityScan(TransactionCase):
         self.assertEqual(action["context"]["default_target_model"], "hr.employee")
         self.assertEqual(action["context"]["default_target_res_id"], 7)
         self.assertEqual(action["target"], "new")
+
+    def test_form_view_flow(self):
+        """El asistente se puede llenar y leer desde su vista, como lo haría un usuario."""
+        action = self.Scan._get_action("res.partner")
+        with Form(self.Scan.with_context(**action["context"])) as form:
+            self.assertEqual(form.target_model, "res.partner")
+            self.assertEqual(form.step, "draft")
+            form.front_image = _image_b64().decode()
+        wizard = form.save()
+        self._scan(wizard, FRONT_A)
+        with Form(wizard) as form:
+            self.assertEqual(form.step, "review")
+            form.first_name = "Juan"
+            self.assertEqual(form.curp, "GALJ800101HJCRPN05")
+        self.assertEqual(wizard.first_name, "Juan")

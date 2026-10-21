@@ -19,7 +19,7 @@ En desarrollo. Cada parte se entrega en su propio issue:
 | Preprocesamiento de imagen y OCR | Listo |
 | Parser de INE | Listo |
 | Asistente de escaneo | Listo |
-| Integración con `res.partner` | Pendiente |
+| Integración con `res.partner` | Listo |
 | Integración con `hr.employee` | Pendiente |
 
 ## Requisitos
