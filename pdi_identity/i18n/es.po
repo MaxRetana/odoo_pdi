@@ -1,0 +1,460 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pdi_identity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-21 06:50+0000\n"
+"PO-Revision-Date: 2026-10-21 06:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "/usr/bin/tesseract"
+msgstr "/usr/bin/tesseract"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid ""
+"Adjunta la INE al contacto o empleado creado. Por defecto no se guarda: "
+"contiene datos personales sensibles."
+msgstr ""
+"Adjunta la INE al contacto o empleado creado. Por defecto no se guarda: "
+"contiene datos personales sensibles."
+
+#. module: pdi_identity
+#: model:ir.model.fields,help:pdi_identity.field_res_config_settings__pdi_keep_images
+msgid ""
+"Adjunta las imágenes de la identificación al registro creado. Por defecto no"
+" se conservan: contienen datos personales sensibles."
+msgstr ""
+"Adjunta las imágenes de la identificación al registro creado. Por defecto no"
+" se conservan: contienen datos personales sensibles."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__warnings
+msgid "Advertencias"
+msgstr "Advertencias"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__maternal_surname
+msgid "Apellido materno"
+msgstr "Apellido materno"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__paternal_surname
+msgid "Apellido paterno"
+msgstr "Apellido paterno"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__zip
+msgid "C.P."
+msgstr "C.P."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_hr_employee__pdi_curp
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_mixin__pdi_curp
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__curp
+#: model:ir.model.fields,field_description:pdi_identity.field_res_partner__pdi_curp
+#: model:ir.model.fields,field_description:pdi_identity.field_res_users__pdi_curp
+msgid "CURP"
+msgstr "CURP"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__street
+msgid "Calle y número"
+msgstr "Calle y número"
+
+#. module: pdi_identity
+#: model:ir.model,name:pdi_identity.model_pdi_identity_mixin
+msgid "Campos y acciones comunes para escanear identificaciones"
+msgstr "Campos y acciones comunes para escanear identificaciones"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: pdi_identity
+#. odoo-python
+#: code:addons/pdi_identity/wizard/pdi_identity_scan.py:0
+msgid "Captura al menos el nombre o la CURP."
+msgstr "Captura al menos el nombre o la CURP."
+
+#. module: pdi_identity
+#. odoo-python
+#: code:addons/pdi_identity/wizard/pdi_identity_scan.py:0
+msgid "Carga al menos la imagen del frente de la INE."
+msgstr "Carga al menos la imagen del frente de la INE."
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__step__draft
+msgid "Cargar imágenes"
+msgstr "Cargar imágenes"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__city
+msgid "Ciudad o municipio"
+msgstr "Ciudad o municipio"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_hr_employee__pdi_elector_key
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_mixin__pdi_elector_key
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__elector_key
+#: model:ir.model.fields,field_description:pdi_identity.field_res_partner__pdi_elector_key
+#: model:ir.model.fields,field_description:pdi_identity.field_res_users__pdi_elector_key
+msgid "Clave de elector"
+msgstr "Clave de elector"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__street2
+msgid "Colonia"
+msgstr "Colonia"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Completar registro"
+msgstr "Completar registro"
+
+#. module: pdi_identity
+#: model:ir.model,name:pdi_identity.model_res_config_settings
+msgid "Config Settings"
+msgstr "Config Settings"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_res_config_settings__pdi_keep_images
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Conservar las imágenes"
+msgstr "Conservar las imágenes"
+
+#. module: pdi_identity
+#: model:ir.model,name:pdi_identity.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__target_model__res_partner
+msgid "Contacto"
+msgstr "Contacto"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.view_employee_tree_pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.view_partner_tree_pdi_identity
+msgid "Crear desde INE"
+msgstr "Crear desde INE"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Crear registro"
+msgstr "Crear registro"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Código de idioma de Tesseract, por ejemplo spa o spa+eng."
+msgstr "Código de idioma de Tesseract, por ejemplo spa o spa+eng."
+
+#. module: pdi_identity
+#: model:ir.model.fields,help:pdi_identity.field_res_config_settings__pdi_ocr_lang
+msgid "Código de idioma de Tesseract. Ejemplos: spa, spa+eng."
+msgstr "Código de idioma de Tesseract. Ejemplos: spa, spa+eng."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_mixin__display_name
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__display_name
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_ocr_service__display_name
+#: model:ir.model.fields,field_description:pdi_identity.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:pdi_identity.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__document_type
+msgid "Documento"
+msgstr "Documento"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Domicilio"
+msgstr "Domicilio"
+
+#. module: pdi_identity
+#. odoo-python
+#: code:addons/pdi_identity/wizard/pdi_identity_scan.py:0
+msgid "El registro que se iba a completar ya no existe."
+msgstr "El registro que se iba a completar ya no existe."
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__target_model__hr_employee
+msgid "Empleado"
+msgstr "Empleado"
+
+#. module: pdi_identity
+#: model:ir.model,name:pdi_identity.model_hr_employee
+msgid "Employee"
+msgstr "Employee"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.view_employee_form_pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.view_partner_form_pdi_identity
+msgid "Escanear INE"
+msgstr "Escanear INE"
+
+#. module: pdi_identity
+#: model:ir.actions.act_window,name:pdi_identity.pdi_identity_scan_action
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Escanear identificación"
+msgstr "Escanear identificación"
+
+#. module: pdi_identity
+#: model:res.groups.privilege,name:pdi_identity.res_groups_privilege_pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Escaneo de identificaciones"
+msgstr "Escaneo de identificaciones"
+
+#. module: pdi_identity
+#: model:ir.model,name:pdi_identity.model_pdi_identity_scan
+msgid "Escaneo de identificación"
+msgstr "Escaneo de identificación"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__state_id
+msgid "Estado"
+msgstr "Estado"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__birth_state_id
+msgid "Estado de nacimiento"
+msgstr "Estado de nacimiento"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__birth_date
+msgid "Fecha de nacimiento"
+msgstr "Fecha de nacimiento"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__front_image
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Frente"
+msgstr "Frente"
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__gender__male
+msgid "Hombre"
+msgstr "Hombre"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_hr_employee__id
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_mixin__id
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__id
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_ocr_service__id
+#: model:ir.model.fields,field_description:pdi_identity.field_res_config_settings__id
+#: model:ir.model.fields,field_description:pdi_identity.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__document_type__ine
+msgid "INE"
+msgstr "INE"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Identificaciones"
+msgstr "Identificaciones"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+#: model_terms:ir.ui.view,arch_db:pdi_identity.view_partner_form_pdi_identity
+msgid "Identificación"
+msgstr "Identificación"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_res_config_settings__pdi_ocr_lang
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Idioma del OCR"
+msgstr "Idioma del OCR"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Leer imagen"
+msgstr "Leer imagen"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__target_model
+msgid "Modelo destino"
+msgstr "Modelo destino"
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__gender__female
+msgid "Mujer"
+msgstr "Mujer"
+
+#. module: pdi_identity
+#. odoo-python
+#: code:addons/pdi_identity/wizard/pdi_identity_scan.py:0
+msgid ""
+"No se pudieron leer datos de la INE. Verifica que la imagen sea nítida, esté"
+" completa, bien iluminada y sin reflejos."
+msgstr ""
+"No se pudieron leer datos de la INE. Verifica que la imagen sea nítida, esté"
+" completa, bien iluminada y sin reflejos."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__first_name
+msgid "Nombre(s)"
+msgstr "Nombre(s)"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__country_id
+msgid "País"
+msgstr "País"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Persona"
+msgstr "Persona"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Privacidad"
+msgstr "Privacidad"
+
+#. module: pdi_identity
+#: model:res.groups,comment:pdi_identity.group_pdi_identity_user
+msgid ""
+"Puede escanear identificaciones para crear o completar contactos y "
+"empleados."
+msgstr ""
+"Puede escanear identificaciones para crear o completar contactos y "
+"empleados."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__target_res_id
+msgid "Registro destino"
+msgstr "Registro destino"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__back_image
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Reverso (opcional)"
+msgstr "Reverso (opcional)"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Revisa los datos leídos y corrige lo que haga falta antes de guardar."
+msgstr "Revisa los datos leídos y corrige lo que haga falta antes de guardar."
+
+#. module: pdi_identity
+#: model:ir.model.fields.selection,name:pdi_identity.selection__pdi_identity_scan__step__review
+msgid "Revisar datos"
+msgstr "Revisar datos"
+
+#. module: pdi_identity
+#: model:ir.model.fields,help:pdi_identity.field_res_config_settings__pdi_tesseract_cmd
+msgid ""
+"Ruta completa del binario de Tesseract. Déjalo vacío si está en el PATH del "
+"servidor."
+msgstr ""
+"Ruta completa del binario de Tesseract. Déjalo vacío si está en el PATH del "
+"servidor."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_res_config_settings__pdi_tesseract_cmd
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "Ruta de Tesseract"
+msgstr "Ruta de Tesseract"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid ""
+"Ruta del binario de Tesseract en el servidor. Vacío = el que esté en el "
+"PATH."
+msgstr ""
+"Ruta del binario de Tesseract en el servidor. Vacío = el que esté en el "
+"PATH."
+
+#. module: pdi_identity
+#: model:ir.model,name:pdi_identity.model_pdi_ocr_service
+msgid "Servicio de OCR para identificaciones"
+msgstr "Servicio de OCR para identificaciones"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__gender
+msgid "Sexo"
+msgstr "Sexo"
+
+#. module: pdi_identity
+#: model:ir.model.fields,help:pdi_identity.field_pdi_identity_scan__target_res_id
+msgid "Si se indica, se completa ese registro; si no, se crea uno nuevo."
+msgstr "Si se indica, se completa ese registro; si no, se crea uno nuevo."
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__step
+msgid "Step"
+msgstr "Step"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid ""
+"Sube una foto clara de la identificación, completa, bien iluminada y sin reflejos.\n"
+"                        Las imágenes se leen en el servidor y no se envían a servicios externos."
+msgstr ""
+"Sube una foto clara de la identificación, completa, bien iluminada y sin reflejos.\n"
+"                        Las imágenes se leen en el servidor y no se envían a servicios externos."
+
+#. module: pdi_identity
+#: model:res.groups,name:pdi_identity.group_pdi_identity_user
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_scan__validity_year
+msgid "Vigencia (año)"
+msgstr "Vigencia (año)"
+
+#. module: pdi_identity
+#: model:ir.model.fields,field_description:pdi_identity.field_hr_employee__pdi_ine_validity_year
+#: model:ir.model.fields,field_description:pdi_identity.field_pdi_identity_mixin__pdi_ine_validity_year
+#: model:ir.model.fields,field_description:pdi_identity.field_res_partner__pdi_ine_validity_year
+#: model:ir.model.fields,field_description:pdi_identity.field_res_users__pdi_ine_validity_year
+msgid "Vigencia de la INE"
+msgstr "Vigencia de la INE"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.pdi_identity_scan_view_form
+msgid "Volver a cargar"
+msgstr "Volver a cargar"
+
+#. module: pdi_identity
+#: model_terms:ir.ui.view,arch_db:pdi_identity.res_config_settings_view_form
+msgid "spa"
+msgstr "spa"
