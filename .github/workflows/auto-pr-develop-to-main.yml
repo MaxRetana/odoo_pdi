@@ -1,0 +1,67 @@
+name: Actualizar Pull Request de develop a main
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+
+# Evita que dos merges seguidos editen el PR al mismo tiempo
+concurrency:
+  group: auto-pr-develop-to-main
+  cancel-in-progress: false
+
+jobs:
+  pr-develop-to-main:
+    # Solo cuando el PR se mergeó (no cuando se cerró sin merge)
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crear o actualizar el PR de develop a main
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          script: |
+            const { owner, repo } = context.repo;
+            const merged = context.payload.pull_request;
+
+            const entry = [
+              `### #${merged.number} ${merged.title}`,
+              `Por @${merged.user.login}`,
+              '',
+              (merged.body || '_Sin descripción._').trim(),
+            ].join('\n');
+
+            const { data: open } = await github.rest.pulls.list({
+              owner, repo, state: 'open', head: `${owner}:develop`, base: 'main',
+            });
+
+            if (open.length === 0) {
+              const body = [
+                'PR generado automáticamente. Reúne los cambios mergeados a `develop`.',
+                '',
+                '## Cambios incluidos',
+                '',
+                entry,
+              ].join('\n');
+
+              const { data: pr } = await github.rest.pulls.create({
+                owner, repo, head: 'develop', base: 'main',
+                title: 'Auto PR: develop → main', body,
+              });
+              await github.rest.issues.addLabels({
+                owner, repo, issue_number: pr.number, labels: ['auto-pr'],
+              });
+              return;
+            }
+
+            const pr = open[0];
+            const current = pr.body || '';
+
+            // Idempotencia: si este PR ya está listado, no se vuelve a agregar
+            if (new RegExp(`### #${merged.number} `).test(current)) return;
+
+            await github.rest.pulls.update({
+              owner, repo, pull_number: pr.number,
+              body: `${current}\n\n${entry}`,
+            });
