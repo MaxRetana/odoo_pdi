@@ -53,6 +53,14 @@ rama de issue ──PR──▶ develop ──automático──▶ test ──PR
 
 Cada cambio nace de un issue, en una rama desde `develop`, y entra por Pull Request. `develop`, `test` y `main` están protegidas: no se hace push directo.
 
+## Contribuir
+
+1. Todo cambio parte de un issue. Crea el issue con la plantilla que corresponda (bug, funcionalidad, tarea, historia o epic) y asígnalo a un proyecto.
+2. Crea una rama desde `develop` con el prefijo del tipo de cambio: `feat/`, `fix/`, `chore/`, `ci/` o `docs/`, y el número del issue (por ejemplo `feat/12-integracion-hr-employee`).
+3. Haz commits pequeños y abre un Pull Request **hacia `develop`**, con `Closes #N` en la descripción y siguiendo la plantilla del PR.
+4. Corre las pruebas antes de abrirlo (ver el [README del módulo](pdi_identity/README.md#pruebas)).
+5. Al mergear a `develop`, un workflow lo pasa a `test` y mantiene abierto un PR `test → main`, que se mergea manualmente.
+
 ## Licencia
 
 LGPL-3
