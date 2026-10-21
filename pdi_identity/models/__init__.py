@@ -1,1 +1,3 @@
 # Part of odoo_pdi. See LICENSE file for full copyright and licensing details.
+from . import pdi_ocr_service
+from . import res_config_settings
