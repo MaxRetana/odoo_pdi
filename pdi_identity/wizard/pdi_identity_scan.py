@@ -63,12 +63,17 @@ class PdiIdentityScan(models.TransientModel):
     # ------------------------------------------------------------------
 
     @api.model
-    def _get_action(self, target_model, target_res_id=False):
-        """Acción que abre el asistente para ``target_model``."""
+    def _get_action(self, target_model, target_res_id=False, extra_context=None):
+        """Acción que abre el asistente para ``target_model``.
+
+        :param dict extra_context: contexto que se conserva al crear el
+            registro (por ejemplo, ``default_supplier_rank``).
+        """
         action = self.env["ir.actions.act_window"]._for_xml_id(
             "pdi_identity.pdi_identity_scan_action"
         )
         action["context"] = {
+            **(extra_context or {}),
             "default_target_model": target_model,
             "default_target_res_id": target_res_id or 0,
         }

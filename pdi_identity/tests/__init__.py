@@ -5,3 +5,4 @@ from . import test_ine_parser
 from . import test_mx_states
 from . import test_ocr
 from . import test_ocr_service
+from . import test_res_partner
