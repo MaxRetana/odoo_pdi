@@ -18,6 +18,7 @@ oficial y llenar el registro sin teclear.
         "security/ir.model.access.csv",
         "views/pdi_identity_scan_views.xml",
         "views/res_partner_views.xml",
+        "views/hr_employee_views.xml",
         "views/res_config_settings_views.xml",
     ],
     "installable": True,

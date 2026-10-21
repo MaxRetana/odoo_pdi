@@ -20,7 +20,7 @@ En desarrollo. Cada parte se entrega en su propio issue:
 | Parser de INE | Listo |
 | Asistente de escaneo | Listo |
 | Integración con `res.partner` | Listo |
-| Integración con `hr.employee` | Pendiente |
+| Integración con `hr.employee` | Listo |
 
 ## Requisitos
 
