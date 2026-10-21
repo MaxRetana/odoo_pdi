@@ -37,3 +37,16 @@ class PdiIdentityMixin(models.AbstractModel):
         """Abre el asistente para completar este registro con una INE."""
         self.ensure_one()
         return self.env["pdi.identity.scan"]._get_action(self._name, self.id)
+
+    def action_pdi_create_from_identity(self):
+        """Abre el asistente para crear un registro nuevo desde una INE.
+
+        Se usa desde el botón de la vista de lista: no necesita registros
+        seleccionados. Los valores por defecto de la lista (por ejemplo, el
+        rol de proveedor) se conservan al crear el registro.
+        """
+        defaults = {
+            key: value for key, value in self.env.context.items()
+            if key.startswith("default_")
+        }
+        return self.env["pdi.identity.scan"]._get_action(self._name, extra_context=defaults)
