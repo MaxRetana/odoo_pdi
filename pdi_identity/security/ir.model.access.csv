@@ -1,1 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pdi_identity_scan_user,pdi.identity.scan user,model_pdi_identity_scan,group_pdi_identity_user,1,1,1,1
