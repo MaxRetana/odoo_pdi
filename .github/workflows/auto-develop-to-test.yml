@@ -1,0 +1,82 @@
+name: Pasar develop a test automáticamente
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+
+# Evita que dos merges seguidos creen o mergeen el PR al mismo tiempo
+concurrency:
+  group: auto-develop-to-test
+  cancel-in-progress: false
+
+jobs:
+  develop-to-test:
+    # Solo cuando el PR se mergeó (no cuando se cerró sin merge)
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crear el PR de develop a test y mergearlo
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          script: |
+            const { owner, repo } = context.repo;
+            const merged = context.payload.pull_request;
+
+            const entry = [
+              `### #${merged.number} ${merged.title}`,
+              `Por @${merged.user.login}`,
+              '',
+              (merged.body || '_Sin descripción._').trim(),
+            ].join('\n');
+
+            const { data: open } = await github.rest.pulls.list({
+              owner, repo, state: 'open', head: `${owner}:develop`, base: 'test',
+            });
+
+            let pr;
+            if (open.length === 0) {
+              try {
+                const { data } = await github.rest.pulls.create({
+                  owner, repo, head: 'develop', base: 'test',
+                  title: 'Auto PR: develop → test', body: entry,
+                });
+                pr = data;
+              } catch (e) {
+                // 422: develop no tiene commits nuevos respecto a test
+                if (e.status === 422) {
+                  core.info('develop no tiene cambios pendientes para test.');
+                  return;
+                }
+                throw e;
+              }
+              await github.rest.issues.addLabels({
+                owner, repo, issue_number: pr.number, labels: ['auto-pr'],
+              });
+            } else {
+              // Quedó un PR abierto de una corrida anterior: se reutiliza
+              pr = open[0];
+              const current = pr.body || '';
+              if (!new RegExp(`### #${merged.number} `).test(current)) {
+                await github.rest.pulls.update({
+                  owner, repo, pull_number: pr.number, body: `${current}\n\n${entry}`,
+                });
+              }
+            }
+
+            // GitHub calcula si el PR es mergeable de forma asíncrona: reintentar
+            for (let i = 1; i <= 6; i++) {
+              try {
+                await github.rest.pulls.merge({
+                  owner, repo, pull_number: pr.number, merge_method: 'merge',
+                  commit_title: 'Auto merge: develop → test',
+                });
+                return;
+              } catch (e) {
+                if (i === 6) throw e;
+                core.info(`Intento ${i} falló (${e.message}); reintentando...`);
+                await new Promise((r) => setTimeout(r, 5000));
+              }
+            }
