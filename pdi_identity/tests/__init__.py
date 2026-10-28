@@ -1,4 +1,5 @@
 # Part of odoo_pdi. See LICENSE file for full copyright and licensing details.
+from . import test_hr_employee
 from . import test_identity_scan
 from . import test_image_preprocess
 from . import test_ine_parser

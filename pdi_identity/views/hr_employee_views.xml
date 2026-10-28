@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_employee_form_pdi_identity" model="ir.ui.view">
+        <field name="name">hr.employee.form.pdi.identity</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_create_user']" position="before">
+                <button name="action_pdi_scan_identity" type="object" string="Escanear INE"
+                        class="btn btn-secondary" invisible="not id"
+                        groups="pdi_identity.group_pdi_identity_user"/>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <field name="pdi_elector_key" groups="pdi_identity.group_pdi_identity_user"/>
+                <field name="pdi_ine_validity_year" options="{'format': false}"
+                       groups="pdi_identity.group_pdi_identity_user"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_tree_pdi_identity" model="ir.ui.view">
+        <field name="name">hr.employee.list.pdi.identity</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_pdi_create_from_identity" type="object" string="Crear desde INE"
+                        display="always" groups="pdi_identity.group_pdi_identity_user"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_filter_pdi_identity" model="ir.ui.view">
+        <field name="name">hr.employee.search.pdi.identity</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="pdi_curp" groups="pdi_identity.group_pdi_identity_user"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
