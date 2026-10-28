@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_pdi_identity" model="ir.ui.view">
+        <field name="name">res.partner.form.pdi.identity</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header groups="pdi_identity.group_pdi_identity_user">
+                    <button name="action_pdi_scan_identity" type="object" string="Escanear INE"
+                            class="btn-secondary" invisible="is_company or not id"/>
+                </header>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Identificación" name="pdi_identity" invisible="is_company"
+                      groups="pdi_identity.group_pdi_identity_user">
+                    <group>
+                        <group>
+                            <field name="pdi_curp"/>
+                            <field name="pdi_elector_key"/>
+                        </group>
+                        <group>
+                            <field name="pdi_ine_validity_year" options="{'format': false}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_pdi_identity" model="ir.ui.view">
+        <field name="name">res.partner.list.pdi.identity</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='avatar_128']" position="before">
+                <header>
+                    <button name="action_pdi_create_from_identity" type="object" string="Crear desde INE"
+                            display="always" class="btn-secondary"
+                            groups="pdi_identity.group_pdi_identity_user"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_pdi_identity" model="ir.ui.view">
+        <field name="name">res.partner.search.pdi.identity</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="pdi_curp" groups="pdi_identity.group_pdi_identity_user"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
