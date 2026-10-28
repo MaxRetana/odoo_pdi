@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pdi.identity</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="95"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Identificaciones" string="Identificaciones" name="pdi_identity" groups="base.group_system">
+                    <block title="Escaneo de identificaciones" name="pdi_identity_ocr_container">
+                        <setting id="pdi_tesseract_cmd_setting" string="Ruta de Tesseract" help="Ruta del binario de Tesseract en el servidor. Vacío = el que esté en el PATH.">
+                            <field name="pdi_tesseract_cmd" placeholder="/usr/bin/tesseract"/>
+                        </setting>
+                        <setting id="pdi_ocr_lang_setting" string="Idioma del OCR" help="Código de idioma de Tesseract, por ejemplo spa o spa+eng.">
+                            <field name="pdi_ocr_lang" placeholder="spa"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
