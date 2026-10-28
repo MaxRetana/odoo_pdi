@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Odoo
+*.pot~
+*.po~
+filestore/
+*.log
+
+# Secretos y configuración local
+.env
+.env.*
+*.conf
+odoo.conf
+
+# IDE y sistema
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Imágenes de prueba con datos personales (nunca subir documentos reales)
+*.jpg
+*.jpeg
+!pdi_identity/static/**/*.jpg
+!pdi_identity/static/**/*.jpeg
