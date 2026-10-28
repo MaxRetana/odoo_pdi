@@ -18,7 +18,7 @@ En desarrollo. Cada parte se entrega en su propio issue:
 | Estructura del módulo | Listo |
 | Preprocesamiento de imagen y OCR | Listo |
 | Parser de INE | Listo |
-| Asistente de escaneo | Pendiente |
+| Asistente de escaneo | Listo |
 | Integración con `res.partner` | Pendiente |
 | Integración con `hr.employee` | Pendiente |
 

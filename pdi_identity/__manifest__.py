@@ -16,6 +16,7 @@ oficial y llenar el registro sin teclear.
     "data": [
         "security/pdi_identity_security.xml",
         "security/ir.model.access.csv",
+        "views/pdi_identity_scan_views.xml",
         "views/res_config_settings_views.xml",
     ],
     "installable": True,
